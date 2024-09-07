@@ -1,0 +1,98 @@
+/* Global Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fa; /* Light gray background for a modern look */
+    color: #333; /* Dark gray text for readability */
+}
+
+/* App Container */
+.app {
+    max-width: 800px;
+    margin: 40px auto; /* Centered with top margin for spacing */
+    padding: 20px;
+    background-color: white; /* White background for contrast */
+    border-radius: 12px; /* Rounded corners for modern card effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 30px; /* Spacing below the header */
+}
+
+    header h1 {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #007BFF; /* Blue for wallet branding */
+        margin: 0;
+    }
+
+/* Content Area */
+.content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+/* Account Information */
+.account-info p {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #444; /* Dark gray for emphasis */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Transaction Section Styling */
+.transaction-section {
+    margin-top: 40px; /* More space above the transaction section */
+}
+
+    .transaction-section h2 {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #333; /* Dark gray */
+        margin-bottom: 20px;
+        border-bottom: 2px solid #007BFF; /* Bottom border for visual separation */
+        padding-bottom: 10px;
+    }
+
+/* Transaction List */
+#transaction-list {
+    list-style: none;
+    padding: 0;
+}
+
+    #transaction-list li {
+        margin-bottom: 15px; /* Increased spacing between transactions */
+        padding: 15px;
+        background-color: #fff; /* White background for each transaction */
+        border: 1px solid #ddd; /* Light border around each transaction */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+        transition: box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+    }
+
+        #transaction-list li:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect on hover */
+        }
+
+/* Buttons (if any buttons are part of this app) */
+button {
+    padding: 12px 20px;
+    background-color: #007BFF; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet App - Send Coins</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Global Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif; /* Updated font */
+            background-color: #f0f4f8; /* Light background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Top Navigation */
+        nav {
+            width: 100%; /* Full-width top bar */
+            background-color: #004d40; /* Dark teal for navigation bar */
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10; /* Ensure it stays above content */
+        }
+
+        /* Navigation Links */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center navigation links */
+        }
+
+        li {
+            margin: 0 20px; /* Spacing between links */
+        }
+
+        a {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+            a:hover {
+                color: #ffd700; /* Soft gold hover effect */
+            }
+
+        nav button {
+            color: #f1f1f1;
+            background: none;
+            border: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            nav button:hover {
+                color: #ffd700;
+            }
+
+        /* Main Content Styling */
+        main {
+            margin-top: 80px; /* Add margin to avoid overlapping with the fixed top navigation */
+            padding: 40px;
+            background-color: #fff;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: center;
+        }
+
+        h1 {
+            color: #004d40; /* Dark teal for headings */
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: #ffd700; /* Soft gold */
+            color: #004d40; /* Dark teal */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+            button:hover {
+                background-color: #e6be00; /* Darker gold on hover */
+            }
+
+        #loginStatus {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Smooth Hover and Fade-in */
+        main:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        main {
+            animation: fadeIn 1s;
+        }
+    </style>
+</head>
+
+<body onload="checkLoginStatus()">
+    <nav>
+        <ul>
+            <li><a href="HomePage.html">Home</a></li>
+            <li><a href="CreateWallet.html">Create Wallet</a></li>
+            <li><a href="SendCoins.html">Send Coins</a></li>
+            <li><a href="TransactionHistory.html">Transaction History</a></li>
+            <li><a href="RestoreAccount.html">Restore Account</a></li>
+            <li><a href="LogInPage.html">Login</a></li>
+        </ul>
+        <ul>
+            <li><button onclick="logOut()">Log Out</button></li>
+        </ul>
+    </nav>
+
+    <p id="loginStatus"></p>
+    <main>
+        <h1>Send Coins</h1>
+        <form id="transactionForm" onsubmit="sendCoins(event)">
+            <label for="recipient">Recipient's Wallet ID:</label>
+            <input type="text" id="recipient" required>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" step="any" required>
+            <label for="coin">Coin:</label>
+            <select id="coin" required>
+                <option value="ETH">Ethereum</option>
+                <option value="LINEA">Linea</option>
+            </select>
+            <button type="submit">Send Coins</button>
+        </form>
+        <div id="transactionResult"></div>
+        <div id="transactionStatus"></div>
+    </main>
+
+    <script src="../JS/lightwallet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.5.2/dist/web3.min.js"></script>
+    <script src="../JS/main.js"></script>
+
+</body>
+
+</html>

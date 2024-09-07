@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\CSS\styles.css" />
+    <None Include="wwwroot\CSS\upperBarStyles.css" />
+    <None Include="wwwroot\CreateWallet.html" />
+    <None Include="wwwroot\HomePage.html" />
+    <None Include="wwwroot\LogInPage.html" />
+    <None Include="wwwroot\ReceiveCoins.html" />
+    <None Include="wwwroot\RestoreAccount.html" />
+    <None Include="wwwroot\SendCoins.html" />
+    <None Include="wwwroot\TransactionHistory.html" />
+    <None Include="wwwroot\JS\hooked-web3-provider.min.js" />
+    <None Include="wwwroot\JS\lightwallet.js" />
+    <None Include="wwwroot\JS\lightwallet.min.js" />
+    <None Include="wwwroot\JS\main.js" />
+    <None Include="wwwroot\JS\web3.js" />
+    <None Include="wwwroot\JS\web3.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\HTML\" />
+  </ItemGroup>
+
+</Project>
